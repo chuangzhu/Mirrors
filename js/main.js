@@ -46,20 +46,20 @@ function renderList(data) {
 function setSyncingState(el, res) {
     switch (res) {
         case "success":
-            el.innerHTML = "<i class=\"fas fa-check\"></i>";
+            el.innerHTML = "<i class=\"tick\"></i>";
             el.classList.add("success");
             break;
 
         case "syncing":
-            el.innerHTML = "<i class=\"fas fa-spinner\"></i>";
+            el.innerHTML = "<i class=\"spinner\"></i>";
             break;
 
         case "paused":
-            el.innerHTML = "<i class=\"fas fa-pause\"></i>";
+            el.innerHTML = "<i class=\"paused\"></i>";
             break;
 
         case "failed":
-            el.innerHTML = "<i class=\"fas fa-times\"></i>";
+            el.innerHTML = "<i class=\"error\"></i>";
             el.classList.add("failed");
             break;
     }

@@ -1,0 +1,32 @@
+/*!
+ * Weird hack to make nerdfont work. (Not the hack font)
+ * For more imformation please visit the awesome & cool https://nerdfonts.com
+ */
+/* FONT PATHS
+ * -------------------------- */
+@font-face {
+    font-family: 'nerdfont';
+    src: url('../assets/nerdfont.woff2') format('woff2');
+    font-weight: 400;
+    font-style: italic;
+}
+
+.tick:before {
+    font-family: nerdfont;
+    content: "\f00c";
+}
+
+.paused:before {
+    font-family: nerdfont;
+    content: "\f8e3";
+}
+
+.spinner:before {
+    font-family: nerdfont;
+    content: "\f952";
+}
+
+.error:before {
+    font-family: nerdfont;
+    content: "\f12a";
+}

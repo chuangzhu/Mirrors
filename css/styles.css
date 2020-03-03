@@ -94,10 +94,6 @@ a:hover {
     color: rgb(99, 201, 16);
 }
 
-.fa-spinner {
-    animation: spin 3s infinite;
-}
-
 @keyframes spin {
     0% {
         transform: rotate(0deg);
@@ -110,6 +106,11 @@ a:hover {
     100% {
         transform: rotate(360deg);
     }
+}
+
+.spinner {
+    display: block;
+    animation: spin 3s infinite;
 }
 
 .description {
