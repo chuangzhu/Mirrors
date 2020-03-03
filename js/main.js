@@ -33,7 +33,6 @@ function renderList(data) {
         const item = data[i];
         const node = model.cloneNode(true);
         node.id = "data" + i;
-        console.log(item);
         node.querySelector(".distro-name").innerHTML = item.name;
         setSyncingState(node.querySelector(".status"), item.status);
         node.querySelector(".last-update").innerHTML = item.last_update.substr(0, item.last_update.length - 5);
