@@ -35,10 +35,8 @@ function renderList(data) {
         node.id = "data" + i;
         console.log(item);
         node.querySelector(".distro-name").innerHTML = item.name;
-        node.querySelector(".is-master").innerHTML = item.is_master ? "<i class=\"fas fa-check\"></i>" : "<i class=\"fas fa-times\"></i>";
         setSyncingState(node.querySelector(".status"), item.status);
         node.querySelector(".last-update").innerHTML = item.last_update.substr(0, item.last_update.length - 5);
-        node.querySelector(".last-ended").innerHTML = item.last_ended.substr(0, item.last_ended.length - 5);
         node.querySelector(".update-schedule").innerHTML = item.next_schedule.substr(0, item.next_schedule.length - 5);
         setProtocol(node.querySelector(".upstream"), item.upstream);
         node.querySelector(".size").innerHTML = item.size;

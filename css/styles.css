@@ -142,15 +142,15 @@ a:hover {
     max-width: calc(33% - 1em);
 }
 
-@media (max-width: 500px) {
-    .item {
-        max-width: 100%;
-    }
-}
-
 @media (max-width: 892px) {
     .item {
         max-width: calc(45% - 1em);
+    }
+}
+
+@media (max-width: 500px) {
+    .item {
+        max-width: 100%;
     }
 }
 
