@@ -1,0 +1,8 @@
+version: "3.1"
+services:
+  frontend:
+    container_name: mirrors_frontend
+    build: .
+    ports:
+      - "8080:80"
+    restart: always
