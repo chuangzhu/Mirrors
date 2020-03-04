@@ -14,7 +14,6 @@ th {
     text-align: center;
     padding: 0.5em 1.0em;
     white-space: nowrap;
-    cursor: default;
 }
 
 th {
@@ -25,8 +24,16 @@ thead > tr {
     border-bottom: 1px solid #444444;
 }
 
+tbody > tr {
+    cursor: pointer;
+}
+
 tbody > tr:hover {
     background: #222;
+}
+
+tbody > tr:active {
+    background: #444;
 }
 
 a {
@@ -122,12 +129,12 @@ a:hover {
 
 .title {
     color: white;
-    letter-spacing: 3px;
+    letter-spacing: 0.5px;
 }
 
 .content {
     margin-top: 1em;
-    letter-spacing: 2px;
+    letter-spacing: 0.9px;
 }
 
 .title:hover * {

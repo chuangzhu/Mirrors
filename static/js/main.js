@@ -32,6 +32,7 @@ function renderList(data) {
     for (let i = 0; i < data.length; i++) {
         const item = data[i];
         const node = model.cloneNode(true);
+        node.setAttribute("href", "/" + item.name);
         node.id = "data" + i;
         node.querySelector(".distro-name").innerHTML = item.name;
         setSyncingState(node.querySelector(".status"), item.status);
@@ -40,6 +41,9 @@ function renderList(data) {
         setProtocol(node.querySelector(".upstream"), item.upstream);
         node.querySelector(".size").innerHTML = item.size;
         table.lastElementChild.appendChild(node);
+        node.addEventListener("mouseup", () => {
+            window.open("/" + item.name);
+        });
     }
 }
 
