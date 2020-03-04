@@ -1,70 +1,98 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>DGUT Mirrors</title>
-    <link rel="stylesheet" href="css/styles.css">
-    <script src="js/main.js"></script>
-    <link rel="stylesheet" href="css/hack.css">
-    <link rel="icon" type="image/png" href="assets/logo.png">
+    <title>DGUT Open Source Software Mirrors</title>
+    <link rel="stylesheet" href="static/css/styles.css">
+    <script src="static/js/main.js"></script>
+    <link rel="stylesheet" href="static/css/hack.css">
+    <link rel="icon" type="image/png" href="static/assets/logo.png">
 </head>
+
 <body>
     <div class="very-thin-stripe"></div>
-    <div class="very-big-title">
-        <img src="assets/logo.png" class="very-big-title__logo">
-        <div class="very-big-title__content">东莞理工学院 镜像站</div>
+    <div class="navbar very-big-title" role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                <img src="static/assets/logo.png" class="very-big-title__logo">
+                <div class="very-big-title__content">
+                    <div class="school">东莞理工学院 </div>
+                    <div>镜像站</div>
+                </div>
+            </div>
+            <div class="navbar-collapse navbar-right">
+                <ul class="nav navbar-nav">
+                    <li class="nav-item"><a class="nav-link" href="https://linux.dgut.edu.cn/">HOME</a></li>
+                    <li class="nav-item"><a class="nav-link" href="https://linux.dgut.edu.cn/blog.html">BLOG</a></li>
+                    <li class="nav-item"><a class="nav-link" href="https://tuna.m/dgutlinux/">CHANNEL</a></li>
+                    <li class="nav-item active"><a class="nav-link" href="https://mirrors.dgut.edu.cn/">MIRRORS</a></li>
+                </ul>
+            </div>
+        </div>
     </div>
 
     <div class="dashboard">
-        <div class="table-holder">
-            <table id="table" class="mirror-table">
-                <thead>
-                    <tr>
-                        <th>发行系统</th>
-                        <th>同步状态</th>
-                        <th>上次更新</th>
-                        <th>更新计划</th>
-                        <th>上游</th>
-                        <th>大小</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr class="mirror-row" id="model">
-                        <td class="distro-name"></td>
-                        <td class="status"></td>
-                        <td class="last-update"></td>
-                        <td class="update-schedule"></td>
-                        <td class="upstream"></td>
-                        <td class="size"></td>
-                    </tr>
-                </tbody>
-            </table>
+        <div class="container">
+            <div class="table-holder">
+                <table id="table" class="mirror-table">
+                    <thead>
+                        <tr>
+                            <th>源名称</th>
+                            <th>同步状态</th>
+                            <th>上次更新</th>
+                            <th class="pc">更新计划</th>
+                            <th class="pc">上游</th>
+                            <th class="pc">大小</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="mirror-row" id="model">
+                            <td class="distro-name"></td>
+                            <td class="status"></td>
+                            <td class="last-update"></td>
+                            <td class="update-schedule pc"></td>
+                            <td class="upstream pc"></td>
+                            <td class="size pc"></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
         </div>
         <div class="description">
-            <div class="row">
-                <div class="item">
-                    <h3 class="title"><span style="color: #343434">#</span> 介绍</h3>
-                    <p class="content">
-                        东莞理工学院的镜像站成立于忘记了多少年，在黄培灿老师的带领下成立。是中国东南部的似乎第二个镜像站，仅次于忘了哪个大学之后。东莞理工学院镜像站旨在为莞工师生以及其他用户提供优质的不知道选什么名词。
-                    </p>
-                </div>
-                <div class="item">
-                    <h3 class="title"><span style="color: #343434">#</span> 拷贝</h3>
-                    <p class="content">
-                        此页面遵循某协议。你可以在<a href="#">某链接</a>里找到关于该协议的详细介绍。
-                    </p>
-                </div>
-                <div class="item">
-                    <h3 class="title"><span style="color: #343434">#</span> 脚注</h3>
-                    <p class="content">
-                        Copyleft &copy; 2020 dglinux
-                    </p>
+            <div class="container">
+                <div class="row">
+                    <div class="item">
+                        <h3 class="title"><span style="color: #343434">#</span> Links</h3>
+                        <p class="content">
+                            <p><a href="https://github.com/dglinux/issues/issues/new"
+                                    style="font-weight: bolder;">镜像请求/反馈 New Mirror/Issues</a></p><br />
+                            <p><a href="https://help.mirrors.dglinux.com/" style="font-weight: bolder;">使用帮助 Help</a>
+                            </p>
+                        </p>
+                    </div>
+                    <div class="item">
+                        <h3 class="title"><span style="color: #343434">#</span> Introduction</h3>
+                        <p class="content">
+                            东莞理工学院 GNU/Linux协会 开源软件镜像站 (Dongguan University of Technology GNU/Linux Association Mirror)
+                            在黄培灿老师的带领下成立于2016年。开源软件镜像站依托于东莞理工学院，部署于教育网华南地区，旨在为莞工师生及华南地区开源软件使用者用户提供优质的开源软件镜像服务。
+                        </p>
+                    </div>
+                    <div class="item">
+                        <h3 class="title"><span style="color: #343434">#</span> Something</h3>
+                        <p class="content">
+                            <p>Copyleft &copy; 2020 Dongguan University of Technology GNU/Linux Association <a
+                                    href="https://linux.dgut.edu.cn/">(Dglinux)</a></p><br />
+                            <p>感谢清华大学 TUNA 协会的 <a href="https://github.com/tuna/tunasync"><b><em>镜像管理器</em></b></a> 项目。
+                            </p>
+                        </p>
+                    </div>
                 </div>
             </div>
-            
         </div>
     </div>
 </body>
+
 </html>

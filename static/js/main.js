@@ -1,7 +1,7 @@
 "use strict";
 
 window.addEventListener("load", () => {
-    fetch("static/status.json").then(res => {
+    fetch("/static/status.json").then(res => {
         return res.json();
     }).then(json => {
         renderList(json);
