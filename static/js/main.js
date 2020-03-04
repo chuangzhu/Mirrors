@@ -42,7 +42,7 @@ function renderList(data) {
         node.querySelector(".size").innerHTML = item.size;
         table.lastElementChild.appendChild(node);
         node.addEventListener("mouseup", () => {
-            window.open("/" + item.name);
+            window.open("/" + item.name + "/");
         });
     }
 }
