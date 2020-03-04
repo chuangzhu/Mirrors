@@ -36,8 +36,8 @@ function renderList(data) {
         node.id = "data" + i;
         node.querySelector(".distro-name").innerHTML = item.name;
         setSyncingState(node.querySelector(".status"), item.status);
-        node.querySelector(".last-update").innerHTML = item.last_update.substr(0, item.last_update.length - 5);
-        node.querySelector(".update-schedule").innerHTML = item.next_schedule.substr(0, item.next_schedule.length - 5);
+        node.querySelector(".last-update").innerHTML = stringifyTime(item.last_update_ts);
+        node.querySelector(".update-schedule").innerHTML = stringifyTime(item.next_schedule_ts);
         setProtocol(node.querySelector(".upstream"), item.upstream);
         node.querySelector(".size").innerHTML = item.size;
         table.lastElementChild.appendChild(node);
@@ -73,3 +73,14 @@ function setProtocol(el, res) {
     el.setAttribute("prompt", res);
     el.innerHTML = "<a href=\"" + res + "\">" + res.split(":")[0] + "</a>";
 }
+
+function stringifyTime(ts) {
+    let date = new Date(ts * 1000);
+    let str = "";
+    if (date.getFullYear() > 2000) {
+      str = ('000' + date.getFullYear()).substr(-4) + "-" + ('0' + (date.getMonth() + 1)).substr(-2) + "-" + ('0' + date.getDate()).substr(-2) + (" " + ('0' + date.getHours()).substr(-2) + ":" + ('0' + date.getMinutes()).substr(-2));
+    } else {
+      str = "0000-00-00 00:00";
+    }
+    return str;
+};
