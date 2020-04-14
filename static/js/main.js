@@ -8,6 +8,13 @@ window.addEventListener("load", () => {
     });
 });
 
+const official_mirrors = ["archlinuxcn","ubuntu","ubuntu-releases"];
+const official_mirrors_span = ' <span class="label label-official">official</span> ';
+
+function stringInArray(arr, str) {
+    return (arr.indexOf(str) > -1);
+}
+
 function renderList(data) {
     function getImportance(state) {
         switch (state) {
@@ -34,7 +41,8 @@ function renderList(data) {
         const node = model.cloneNode(true);
         node.setAttribute("href", "/" + item.name);
         node.id = "data" + i;
-        node.querySelector(".distro-name").innerHTML = item.name;
+	    let distro_name = stringInArray(official_mirrors, item.name) ? item.name + official_mirrors_span : item.name;
+        node.querySelector(".distro-name").innerHTML = distro_name;
         setSyncingState(node.querySelector(".status"), item.status);
         node.querySelector(".last-update").innerHTML = stringifyTime(item.last_update_ts);
         node.querySelector(".update-schedule").innerHTML = stringifyTime(item.next_schedule_ts);
