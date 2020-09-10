@@ -8,7 +8,7 @@ window.addEventListener("load", () => {
     });
 });
 
-const official_mirrors = ["archlinux","archlinuxcn","ubuntu","ubuntu-releases"];
+const official_mirrors = ["archlinux","archlinuxcn","ubuntu","ubuntu-releases","kicad"];
 const official_mirrors_span = ' <span class="label label-official">official</span> ';
 
 function stringInArray(arr, str) {
