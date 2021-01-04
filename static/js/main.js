@@ -31,6 +31,11 @@ function renderList(data) {
                 return 4;
         }
     }
+
+    data.sort((a, b) => {
+        return a.name.localeCompare(b.name);
+    });
+
     data.sort((a, b) => {
         return getImportance(a.status) - getImportance(b.status);
     });
