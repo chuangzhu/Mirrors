@@ -22,7 +22,7 @@ function renderList(data) {
                 return 1;
 
             case "syncing":
-                return 2;
+                return 1;
 
             case "paused":
                 return 3;
