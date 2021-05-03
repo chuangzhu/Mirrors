@@ -18,7 +18,7 @@ RUN cp nginx.vh.conf /etc/nginx/conf.d/default.conf && chmod 644 /etc/nginx/conf
     nginx -t ;\
     mkdir web && \
     cp -r static/ web/ && \
-    cp index.html web ;\
+    cp *.html web ;\
     mkdir -p storage/repos
 
 # forward error logs to docker log collector
