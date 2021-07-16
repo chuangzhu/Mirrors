@@ -9,6 +9,22 @@ window.addEventListener("load", () => {
 });
 
 const official_mirrors = ["archlinux","archlinuxcn","kicad","ubuntu","ubuntu-releases","CTAN"];
+const help_info = {
+    'archlinux': '/mirrors/archlinux',
+    'archlinuxcn': '/mirrors/archlinux-cn',
+    'centos': '/mirrors/centos',
+    'epel': '/mirrors/epel',
+    'debian': '/mirrors/debian',
+    'debian-cd': '/mirrors/debian-cd',
+    'kali': '/mirrors/kali-linux',
+    'manjaro': '/mirrors/manjaro-linux',
+    'raspbian': '/mirrors/raspbian',
+    'raspberrypi': '/mirrors/raspberrypi',
+    'ubuntu': '/mirrors/ubuntu',
+    'ubuntu-releases': '/mirrors/ubuntu-releases',
+    'termux': '/mirrors/termux',
+};
+const help_site = 'https://help.mirrors.dglinux.com';
 const official_mirrors_span = ' <span class="label label-official">official</span> ';
 
 function stringInArray(arr, str) {
@@ -46,17 +62,22 @@ function renderList(data) {
         const node = model.cloneNode(true);
         node.setAttribute("href", "/" + item.name);
         node.id = "data" + i;
-	    let distro_name = stringInArray(official_mirrors, item.name) ? item.name + official_mirrors_span : item.name;
+	let distro_name = stringInArray(official_mirrors, item.name) ? item.name + official_mirrors_span : item.name;
         node.querySelector(".distro-name").innerHTML = distro_name;
         setSyncingState(node.querySelector(".status"), item.status);
         node.querySelector(".last-update").innerHTML = stringifyTime(item.last_update_ts);
         node.querySelector(".update-schedule").innerHTML = stringifyTime(item.next_schedule_ts);
         setProtocol(node.querySelector(".upstream"), item.upstream);
         node.querySelector(".size").innerHTML = item.size;
+        if (item.name in help_info) {
+            node.querySelector(".help").innerHTML = `<a href="${help_site}${help_info[item.name]}">help</a>`;
+        }
         table.lastElementChild.appendChild(node);
-        node.addEventListener("mouseup", () => {
-            window.open("/" + item.name + "/");
-        });
+        for (const selector of ['.distro-name', '.status', '.last-update', '.update-schedule']) {
+            node.querySelector(selector).addEventListener("mouseup", () => {
+                window.open("/" + item.name + "/");
+            });
+        }
     }
 }
 
