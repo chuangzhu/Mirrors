@@ -38,14 +38,12 @@ tbody > tr:active {
 
 a {
     color: rgb(82, 165, 14);
-    text-decoration: none;
-    border-bottom: 2px dotted rgb(82, 165, 14);
+    text-decoration: underline dotted rgb(82, 165, 14) 2px;
 }
 
 a:hover {
     color: rgb(99, 201, 16);
-    text-decoration: none;
-    border-bottom: 2px dotted rgb(106, 209, 21);
+    text-decoration: underline dotted rgb(106, 209, 21) 2px;
 }
 
 #model {
@@ -273,7 +271,7 @@ a:hover {
     background: transparent !important;
     font-weight: 700;
     font-size: 12px;
-    border-bottom: 0;
+    text-decoration: none;
 }
 
 .navbar-nav > .active > a {
