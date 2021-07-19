@@ -63,10 +63,14 @@ a:hover {
     align-items: center;
 }
 
+.titlebar {
+  display: inline-flex;
+  align-items: center;
+}
+
 .very-big-title__logo {
     max-width: 1.5em;
     max-height: 100%;
-    margin-bottom: -7px;
 }
 
 .very-big-title__content {
@@ -184,10 +188,6 @@ a:hover {
 .navbar {
     justify-content: space-between;
     flex-wrap: wrap;
-}
-
-.navbar-header {
-    display: inline;
 }
 
 .navbar-nav {
